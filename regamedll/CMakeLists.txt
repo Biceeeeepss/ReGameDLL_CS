@@ -74,10 +74,10 @@ if ("$ENV{CXX}" MATCHES "icpc")
 		set(LINK_FLAGS "${LINK_FLAGS} -ipo")
 	endif()
 else()
-	# Produce code optimized for the most common IA32/AMD64/EM64T processors.
+	# Produce code optimized for the AMD Zen 2 processors.
 	# As new processors are deployed in the marketplace, the behavior of this option will change.
 	set(COMPILE_FLAGS "${COMPILE_FLAGS} \
-		-mtune=generic -msse3\
+		-mtune=znver2 -msse3\
 		-fpermissive -fno-sized-deallocation\
 		-Wno-delete-non-virtual-dtor -Wno-invalid-offsetof\
 		-Wno-unused-variable -Wno-unused-value -Wno-unused-result -Wno-unused-function\
